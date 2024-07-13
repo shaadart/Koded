@@ -1,6 +1,348 @@
 {
     "topics": [
         {
+            "title": "What is Python?",
+            "content": [
+                {
+                    "subsection": "Introduction to Python",
+                    "description": "Python is a high-level scripting language used for text processing, system administration, and internet-related tasks. It has a small core language that's easy to master, with extensive module support for various tasks. Python is object-oriented and available on multiple platforms.",
+                    "history": {
+                        "developer": "Guido van Rossum",
+                        "development_period": "Early 1990s",
+                        "current_affiliation": "CNRI in Virginia"
+                    }
+                },
+                {
+                    "subsection": "Basic Principles of Python",
+                    "description": "Python incorporates features found in more complex languages from its inception, making it beginner-friendly yet powerful for advanced users.",
+                    "features": [
+                        "High-level scripting language",
+                        "True object-oriented",
+                        "Extensible with modules"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Basic Code Examples",
+            "content": [
+                {
+                    "subsection": "Printing 'Hello, World!'",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "print('hello, world')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Calculating Tax",
+                    "description": "Calculating tax based on cost and tax rate.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "cost = 27.00",
+                            "taxrate = 0.075",
+                            "print(cost * taxrate)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Basic Arithmetic",
+                    "description": "Performing basic arithmetic operations.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "print(16 + 25 + 92 * 3)"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Data Types in Python",
+            "content": [
+                {
+                    "subsection": "Introduction to Data Types",
+                    "description": "Python has several built-in data types that are used to define the operations that can be done on them and the storage method for each of them. The basic data types include:",
+                    "list": [
+                        "`int`: Integer, a whole number without decimals.",
+                        "`float`: Floating-point number, a number that has both an integer and fractional part, separated by a decimal point.",
+                        "`complex`: Complex number, represented as `a + bj`, where `a` and `b` are real numbers and `j` is the imaginary unit.",
+                        "`str`: String, a sequence of characters enclosed in quotes (`'` or `\"`).",
+                        "`bool`: Boolean, represents `True` or `False` values.",
+                        "`list`: List, a collection of items that are ordered and mutable.",
+                        "`tuple`: Tuple, a collection of items that are ordered and immutable.",
+                        "`set`: Set, a collection of unordered and unindexed unique items.",
+                        "`dict`: Dictionary, a collection of key-value pairs that are unordered, mutable, and indexed."
+                    ]
+                },
+                {
+                    "subsection": "Numeric Data Types",
+                    "description": "Python supports three numerical data types:",
+                    "list": [
+                        "`int`: Integer, positive or negative whole numbers (without a fractional part).",
+                        "`float`: Floating-point numbers, used for real numbers with a decimal point.",
+                        "`complex`: Complex numbers, represented as `a + bj`, where `a` and `b` are real numbers and `j` is the imaginary unit."
+                    ]
+                },
+                {
+                    "subsection": "Text Data Type",
+                    "description": "The `str` type in Python represents text and is enclosed in either single (`'`) or double (`\"`) quotes.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "message = 'Hello, World!'",
+                            "print(message)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Boolean Data Type",
+                    "description": "`bool` is a built-in data type in Python used to represent boolean values, `True` or `False`.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "is_valid = True",
+                            "print(is_valid)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Sequence Data Types",
+                    "description": "Python supports three sequence data types:",
+                    "list": [
+                        "`list`: Ordered and mutable collection of items.",
+                        "`tuple`: Ordered and immutable collection of items.",
+                        "`range`: Immutable sequence of numbers generated by `range()` function."
+                    ]
+                },
+                {
+                    "subsection": "Mapping Data Type",
+                    "description": "The `dict` type in Python represents a collection of key-value pairs.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "person = {",
+                            "  'name': 'John',",
+                            "  'age': 30",
+                            "}",
+                            "print(person)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Set Data Type",
+                    "description": "A `set` is an unordered and unindexed collection of unique items.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "fruits = {'apple', 'banana', 'cherry'}",
+                            "print(fruits)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Type Conversion",
+                    "description": "Python allows conversion between different data types using constructors like `int()`, `float()`, `str()`, etc.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "x = int(3.5)",
+                            "y = float(5)",
+                            "z = str(10)",
+                            "print(x, y, z)"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Variables",
+            "content": [
+                {
+                    "subsection": "Introduction to Variables",
+                    "description": "In programming, variables are used to store data values. Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "x = 5",
+                            "y = 'Hello, World!'",
+                            "print(x)",
+                            "print(y)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Variable Names",
+                    "description": "A variable name must start with a letter or the underscore character. A variable name cannot start with a number. Variable names are case-sensitive (age, Age, and AGE are three different variables).",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "myvar = 'John'",
+                            "my_var = 'John'",
+                            "_my_var = 'John'",
+                            "myVar = 'John'",
+                            "MYVAR = 'John'",
+                            "myvar2 = 'John'"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Variable Types",
+                    "description": "Variables can store data of different types, and different types can do different things. Python has the following data types built-in by default, in these categories:",
+                    "list": [
+                        "Text Type: `str`",
+                        "Numeric Types: `int`, `float`, `complex`",
+                        "Sequence Types: `list`, `tuple`, `range`",
+                        "Mapping Type: `dict`",
+                        "Set Types: `set`, `frozenset`",
+                        "Boolean Type: `bool`",
+                        "Binary Types: `bytes`, `bytearray`, `memoryview`"
+                    ]
+                },
+                {
+                    "subsection": "Global Variables",
+                    "description": "Variables that are created outside of a function (as in all of the examples above) are known as global variables. Global variables can be used by everyone, both inside of functions and outside.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "x = 'global'",
+                            "",
+                            "def myfunc():",
+                            "  print('Python is ' + x)",
+                            "",
+                            "myfunc()",
+                            "",
+                            "print('Python is ' + x)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Local Variables",
+                    "description": "Variables that are created inside a function are known as local variables. Local variables can only be used inside the function where they were created.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def myfunc():",
+                            "  y = 'local'",
+                            "  print('Python is ' + y)",
+                            "",
+                            "myfunc()",
+                            "",
+                            "# This will cause an error:",
+                            "# print('Python is ' + y)"
+                        ]
+                    }
+                }
+            ]
+        },  {
+            "title": "Booleans",
+            "content": [
+                {
+                    "subsection": "Introduction to Booleans",
+                    "description": "In programming you often need to know if an expression is `True` or `False`. You can evaluate any expression in Python, and get one of two answers, `True` or `False`.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "print(10 > 9)",
+                            "print(10 == 9)",
+                            "print(10 < 9)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Boolean Values",
+                    "description": "In Python, `True` and `False` are Boolean values (note the uppercase T and F).",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "print(bool('Hello'))",
+                            "print(bool(15))"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Evaluate Values and Variables",
+                    "description": "Almost any value is evaluated to `True` if it has some sort of content. Any string is `True`, except empty strings.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "bool('abc')",
+                            "bool(123)",
+                            "bool(['apple', 'cherry', 'banana'])"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Some Values are `False`",
+                    "description": "In Python, empty values like `''`, `0`, `None`, and empty lists (`[]` and `{}`) are evaluated as `False`.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "bool(False)",
+                            "bool(None)",
+                            "bool(0)",
+                            "bool('')",
+                            "bool([])",
+                            "bool({})"
+                        ]
+                    }
+                }
+            ]
+        },
+
+        {
+            "title": "Input Function",
+            "content": [
+                {
+                    "subsection": "Introduction to Input Function",
+                    "description": "The `input()` function allows user input. Always returns a string.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "username = input('Enter username:')",
+                            "print('Username is: ' + username)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Prompting User for Input",
+                    "description": "You can use the `input()` function with a prompt message to guide the user on what to input.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "name = input('Enter your name: ')",
+                            "print('Hello, ' + name)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Converting Input to Integer or Float",
+                    "description": "To use the input as an integer or float, you must convert it explicitly using `int()` or `float()`.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "age = int(input('Enter your age: '))",
+                            "print('You are', age, 'years old.')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Handling User Input",
+                    "description": "User input can be stored in variables and used throughout your program.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "name = input('Enter your name: ')",
+                            "age = int(input('Enter your age: '))",
+                            "print('Hello, ' + name + '! You are', age, 'years old.')"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
             "title": "Comments",
             "content": [
                 {
@@ -138,6 +480,542 @@
                     }
                 }
             ]
+        },    {
+            "title": "Lists",
+            "content": [
+                {
+                    "subsection": "Creating Lists",
+                    "description": "Lists are created by enclosing comma-separated values within square brackets (`[]`).",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "empty_list = []",
+                            "numbers = [1, 2, 3, 4, 5]",
+                            "fruits = ['apple', 'banana', 'cherry']",
+                            "mixed_list = [1, 'hello', 3.5, True]"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Accessing Elements in a List",
+                    "description": "You can access individual elements in a list using indexing, where the index starts at 0.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "fruits = ['apple', 'banana', 'cherry']",
+                            "print(fruits[0])  # Output: apple",
+                            "print(fruits[2])  # Output: cherry"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Slicing Lists",
+                    "description": "Slicing allows you to obtain a sublist by specifying a range of indices. The syntax for slicing is `list[start:end]`.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "numbers = [1, 2, 3, 4, 5]",
+                            "print(numbers[1:4])  # Output: [2, 3, 4]"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "List Methods",
+                    "description": "Python provides several built-in methods to manipulate lists. Here are some commonly used methods:",
+                    "list": [
+                        "append(item): Adds an item to the end of the list.",
+                        "extend(iterable): Extends the list by appending all elements from the iterable.",
+                        "insert(index, item): Inserts an item at a specified position.",
+                        "remove(item): Removes the first occurrence of the item from the list.",
+                        "pop(index): Removes and returns the item at the specified index.",
+                        "index(item): Returns the index of the first occurrence of the item.",
+                        "count(item): Returns the number of occurrences of the item in the list.",
+                        "sort(): Sorts the list in ascending order.",
+                        "reverse(): Reverses the elements of the list."
+                    ],
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "numbers = [3, 1, 4, 1, 5, 9, 2]",
+                            "# Append an item",
+                            "numbers.append(6)",
+                            "print(numbers)  # Output: [3, 1, 4, 1, 5, 9, 2, 6]",
+                            "# Remove an item",
+                            "numbers.remove(1)",
+                            "print(numbers)  # Output: [3, 4, 1, 5, 9, 2, 6]",
+                            "# Sort the list",
+                            "numbers.sort()",
+                            "print(numbers)  # Output: [1, 2, 3, 4, 5, 6, 9]"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "List Comprehensions",
+                    "description": "List comprehensions provide a concise way to create lists. They consist of an expression followed by a `for` clause, optionally followed by `if` clauses.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "numbers = [1, 2, 3, 4, 5]",
+                            "squared_numbers = [x**2 for x in numbers if x % 2 == 0]",
+                            "print(squared_numbers)  # Output: [4, 16]"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Nested Lists",
+                    "description": "Lists can contain other lists as elements, allowing for the creation of nested data structures.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+                            "print(matrix[1][1])  # Output: 5"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "List Mutability and Immutability",
+                    "description": "While lists themselves are mutable (elements can be changed), if a list contains immutable elements (like tuples), those elements cannot be changed.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "tuple_in_list = [(1, 2), (3, 4)]",
+                            "tuple_in_list[0] = (5, 6)  # Valid operation",
+                            "tuple_in_list[0][0] = 7    # Invalid operation (tuple elements are immutable)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "List vs Tuple",
+                    "description": "Lists and tuples are both used to store collections of items, but tuples are immutable while lists are mutable.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "my_list = [1, 2, 3]",
+                            "my_tuple = (1, 2, 3)",
+                            "# Mutating a list",
+                            "my_list[0] = 4",
+                            "print(my_list)   # Output: [4, 2, 3]",
+                            "# Attempting to mutate a tuple",
+                            "my_tuple[0] = 4  # This will cause an error"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "List Aliasing and Copying",
+                    "description": "Assigning one list to another creates an alias, meaning both variables refer to the same list. To create a separate copy, you can use slicing or the `copy()` method.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "list1 = [1, 2, 3]",
+                            "list2 = list1  # list2 is an alias of list1",
+                            "list1[0] = 4",
+                            "print(list2)  # Output: [4, 2, 3]",
+                            "# Creating a copy",
+                            "list3 = list1.copy()",
+                            "list1[1] = 5",
+                            "print(list1)  # Output: [4, 5, 3]",
+                            "print(list3)  # Output: [4, 2, 3]"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "List Iteration Techniques",
+                    "description": "Python offers multiple techniques to iterate over lists, including `for` loops, `enumerate()`, `zip()`, and list comprehensions.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "numbers = [1, 2, 3, 4, 5]",
+                            "# Using a for loop",
+                            "for num in numbers:",
+                            "    print(num)",
+                            "# Using enumerate()",
+                            "for index, num in enumerate(numbers):",
+                            "    print(index, num)",
+                            "# Using zip()",
+                            "fruits = ['apple', 'banana', 'cherry']",
+                            "for fruit, num in zip(fruits, numbers):",
+                            "    print(fruit, num)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "List Memory Management",
+                    "description": "Understanding how Python manages memory for lists, especially when dealing with large lists or appending elements, is crucial for optimizing performance.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "import sys",
+                            "numbers = list(range(1000000))",
+                            "print(sys.getsizeof(numbers))  # Output: size in bytes"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Tuples",
+            "content": [
+                {
+                    "subsection": "Creating Tuples",
+                    "description": "Tuples are created by enclosing comma-separated values within parentheses (`()`).",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "mytuple = ('apple', 'banana', 'cherry')",
+                            "print(mytuple)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Tuple Characteristics",
+                    "description": "Tuple items are ordered, unchangeable, and allow duplicate values. They are indexed, and the first item has index [0], the second item has index [1], and so on.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thistuple = ('apple', 'banana', 'cherry', 'apple', 'cherry')",
+                            "print(thistuple)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Tuple Length",
+                    "description": "To determine how many items a tuple has, use the `len()` function.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thistuple = ('apple', 'banana', 'cherry')",
+                            "print(len(thistuple))"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Create Tuple With One Item",
+                    "description": "To create a tuple with only one item, add a comma after the item.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thistuple = ('apple',)",
+                            "print(type(thistuple))  # Output: <class 'tuple'>",
+                            "# Not a tuple",
+                            "thistuple = ('apple')",
+                            "print(type(thistuple))  # Output: <class 'str'>"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Tuple Items - Data Types",
+                    "description": "Tuple items can be of any data type.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "tuple1 = ('apple', 'banana', 'cherry')",
+                            "tuple2 = (1, 5, 7, 9, 3)",
+                            "tuple3 = (True, False, False)",
+                            "tuple4 = ('abc', 34, True, 40, 'male')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "The tuple() Constructor",
+                    "description": "It is possible to use the `tuple()` constructor to create a tuple.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thistuple = tuple(('apple', 'banana', 'cherry'))  # note the double round-brackets",
+                            "print(thistuple)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Comparing Tuple with Other Collections",
+                    "description": "Tuples, lists, sets, and dictionaries are all used to store collections of items but have different characteristics.",
+                    "list": [
+                        "List: ordered and changeable, allows duplicate members.",
+                        "Tuple: ordered and unchangeable, allows duplicate members.",
+                        "Set: unordered, unchangeable*, and unindexed, no duplicate members.",
+                        "Dictionary: ordered** and changeable, no duplicate members."
+                    ],
+                    "note": "* Unchangeable, but can add or remove items.",
+                    "note2": "** As of Python 3.7, dictionaries are ordered. In Python 3.6 and earlier, they are unordered."
+                }
+            ]
+        },  {
+            "title": "Dictionaries",
+            "content": [
+                {
+                    "subsection": "Introduction",
+                    "description": "Dictionaries are used to store data values in key:value pairs. A dictionary is a collection which is ordered*, changeable and does not allow duplicates. Dictionaries are written with curly brackets.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thisdict = {",
+                            "  'brand': 'Ford',",
+                            "  'model': 'Mustang',",
+                            "  'year': 1964",
+                            "}",
+                            "print(thisdict)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Dictionary Items",
+                    "description": "Dictionary items are ordered, changeable, and do not allow duplicates. They are presented in key:value pairs, and can be referred to by using the key name.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thisdict = {",
+                            "  'brand': 'Ford',",
+                            "  'model': 'Mustang',",
+                            "  'year': 1964",
+                            "}",
+                            "print(thisdict['brand'])  # Output: Ford"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Ordered or Unordered?",
+                    "description": "When we say that dictionaries are ordered, it means that the items have a defined order, and that order will not change. Unordered means that the items do not have a defined order, you cannot refer to an item by using an index."
+                },
+                {
+                    "subsection": "Changeable",
+                    "description": "Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created."
+                },
+                {
+                    "subsection": "Duplicates Not Allowed",
+                    "description": "Dictionaries cannot have two items with the same key. Duplicate values will overwrite existing values."
+                },
+                {
+                    "subsection": "Dictionary Length",
+                    "description": "To determine how many items a dictionary has, use the len() function.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thisdict = {",
+                            "  'brand': 'Ford',",
+                            "  'model': 'Mustang',",
+                            "  'year': 1964",
+                            "}",
+                            "print(len(thisdict))  # Output: 3"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Dictionary Items - Data Types",
+                    "description": "The values in dictionary items can be of any data type. String, int, boolean, and list data types:",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thisdict = {",
+                            "  'brand': 'Ford',",
+                            "  'electric': False,",
+                            "  'year': 1964,",
+                            "  'colors': ['red', 'white', 'blue']",
+                            "}"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "type()",
+                    "description": "From Python's perspective, dictionaries are defined as objects with the data type 'dict'.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thisdict = {",
+                            "  'brand': 'Ford',",
+                            "  'model': 'Mustang',",
+                            "  'year': 1964",
+                            "}",
+                            "print(type(thisdict))  # Output: <class 'dict'>"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "The dict() Constructor",
+                    "description": "It is also possible to use the dict() constructor to make a dictionary.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "thisdict = dict(name = 'John', age = 36, country = 'Norway')",
+                            "print(thisdict)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Python Collections (Arrays)",
+                    "description": "There are four collection data types in the Python programming language: List, Tuple, Set, and Dictionary. Each type has its own characteristics:",
+                    "list": [
+                        "List: ordered and changeable, allows duplicate members.",
+                        "Tuple: ordered and unchangeable, allows duplicate members.",
+                        "Set: unordered, unchangeable*, and unindexed, no duplicate members.",
+                        "Dictionary: ordered** and changeable, no duplicate members."
+                    ],
+                    "note": "* Unchangeable, but can add or remove items.",
+                    "note2": "** As of Python 3.7, dictionaries are ordered. In Python 3.6 and earlier, they are unordered."
+                }
+            ]
+        }, {
+            "title": "Functions",
+            "content": [
+                {
+                    "subsection": "Introduction to Functions",
+                    "description": "A function is a block of code which only runs when it is called. You can pass data, known as parameters, into a function. A function can return data as a result.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function():",
+                            "    print('Hello from a function')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Calling a Function",
+                    "description": "To call a function, use the function name followed by parenthesis.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function():",
+                            "    print('Hello from a function')",
+                            "",
+                            "my_function()"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Arguments",
+                    "description": "Information can be passed into functions as arguments. Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function(fname):",
+                            "    print(fname + ' Refsnes')",
+                            "",
+                            "my_function('Emil')",
+                            "my_function('Tobias')",
+                            "my_function('Linus')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Parameters",
+                    "description": "A parameter is the variable listed inside the parentheses in the function definition. An argument is the value that is sent to the function when it is called.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function(fname, lname):",
+                            "    print(fname + ' ' + lname)",
+                            "",
+                            "my_function('Emil', 'Refsnes')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Arbitrary Arguments (*args)",
+                    "description": "If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition. This way the function will receive a tuple of arguments, and can access the items accordingly.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function(*kids):",
+                            "    print('The youngest child is ' + kids[2])",
+                            "",
+                            "my_function('Emil', 'Tobias', 'Linus')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Keyword Arguments (**kwargs)",
+                    "description": "If you do not know how many keyword arguments that will be passed into your function, add two asterisks: ** before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function(**kid):",
+                            "    print('His last name is ' + kid['lname'])",
+                            "",
+                            "my_function(fname = 'Tobias', lname = 'Refsnes')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Default Parameter Value",
+                    "description": "If we call the function without an argument, it uses the default value.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function(country = 'Norway'):",
+                            "    print('I am from ' + country)",
+                            "",
+                            "my_function('Sweden')",
+                            "my_function('India')",
+                            "my_function()",
+                            "my_function('Brazil')"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Passing a List as an Argument",
+                    "description": "You can send any data types of argument to a function (string, number, list, dictionary etc.), and it will be treated as the same data type inside the function.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function(food):",
+                            "    for x in food:",
+                            "        print(x)",
+                            "",
+                            "fruits = ['apple', 'banana', 'cherry']",
+                            "",
+                            "my_function(fruits)"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Return Values",
+                    "description": "To let a function return a value, use the return statement.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function(x):",
+                            "    return 5 * x",
+                            "",
+                            "print(my_function(3))",
+                            "print(my_function(5))",
+                            "print(my_function(9))"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "The pass Statement",
+                    "description": "Function definitions cannot be empty, but if you for some reason have a function definition with no content, put in the pass statement to avoid getting an error.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def my_function():",
+                            "    pass"
+                        ]
+                    }
+                },
+                {
+                    "subsection": "Recursion",
+                    "description": "Python also accepts function recursion, which means a defined function can call itself. Recursion is a common mathematical and programming concept. It means that a function calls itself. This has the benefit of meaning that you can loop through data to reach a result.",
+                    "code": {
+                        "language": "python",
+                        "content": [
+                            "def tri_recursion(k):",
+                            "    if(k > 0):",
+                            "        result = k + tri_recursion(k - 1)",
+                            "        print(result)",
+                            "    else:",
+                            "        result = 0",
+                            "    return result",
+                            "",
+                            "print('\\n\\nRecursion Example Results')",
+                            "tri_recursion(6)"
+                        ]
+                    }
+                }
+            ]
         }
+    
+        
     ]
+
+    
 }
