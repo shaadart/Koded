@@ -36,6 +36,21 @@ function displayContent(topics, index) {
     title.textContent = topic.title;
     topicElement.appendChild(title);
 
+    if (topic.url) {
+        const videoContainer = document.createElement('div');
+        videoContainer.classList.add('video-container');
+
+        const iframe = document.createElement('iframe');
+        const videoId = new URL(topic.url).searchParams.get('v');
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.frameBorder = 0;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+
+        videoContainer.appendChild(iframe);
+        topicElement.appendChild(videoContainer);
+    }
+
     topic.content.forEach(section => {
         const subsection = document.createElement('h3');
         subsection.textContent = section.subsection;
@@ -45,28 +60,82 @@ function displayContent(topics, index) {
         description.textContent = section.description;
         topicElement.appendChild(description);
 
-        if (section.code) {
-            const codeBlock = document.createElement('pre');
-            const code = document.createElement('code');
-            code.textContent = section.code.content.join('\n');
-            codeBlock.appendChild(code);
-            topicElement.appendChild(codeBlock);
-        }
-
-        if (section.list) {
+        if (section.features) {
             const list = document.createElement('ul');
-            section.list.forEach(item => {
+            section.features.forEach(item => {
                 const listItem = document.createElement('li');
                 listItem.textContent = item;
                 list.appendChild(listItem);
             });
             topicElement.appendChild(list);
         }
+
+        if (section.code) {
+            const codeBlock = document.createElement('div');
+            codeBlock.classList.add('code-block');
+
+            const pre = document.createElement('pre');
+            const code = document.createElement('code');
+            code.textContent = section.code.content.join('\n');
+
+            const copyButton = document.createElement('button');
+            copyButton.textContent = 'Copy';
+            copyButton.classList.add('copy-button');
+            copyButton.addEventListener('click', () => {
+                copyCodeToClipboard(section.code.content.join('\n'));
+            });
+
+            pre.appendChild(copyButton); // Append the copy button inside the pre element at the top
+            pre.appendChild(code);
+            codeBlock.appendChild(pre);
+
+            topicElement.appendChild(codeBlock);
+        }
+
+        if (section.mcq) {
+            const mcqSection = document.createElement('div');
+            mcqSection.classList.add('mcq-section');
+
+            section.mcq.forEach((question, qIdx) => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('mcq-question');
+                questionElement.textContent = `${qIdx + 1}. ${question.question}`;
+                mcqSection.appendChild(questionElement);
+
+                const optionsList = document.createElement('ul');
+                optionsList.classList.add('mcq-options');
+
+                question.options.forEach(option => {
+                    const optionItem = document.createElement('li');
+
+                    const optionLabel = document.createElement('label');
+                    const optionRadio = document.createElement('input');
+                    optionRadio.type = 'radio';
+                    optionRadio.name = `mcq-${index}-${qIdx}`;
+                    optionRadio.value = option;
+
+                    optionLabel.appendChild(optionRadio);
+                    optionLabel.appendChild(document.createTextNode(option));
+                    optionItem.appendChild(optionLabel);
+                    optionsList.appendChild(optionItem);
+                });
+
+                mcqSection.appendChild(optionsList);
+            });
+
+            const checkAnswersButton = document.createElement('button');
+            checkAnswersButton.textContent = 'Check Answers';
+            checkAnswersButton.addEventListener('click', () => {
+                checkMCQAnswers(section.mcq, index);
+            });
+            mcqSection.appendChild(checkAnswersButton);
+
+            topicElement.appendChild(mcqSection);
+        }
     });
 
     contentContainer.appendChild(topicElement);
 
-    // Highlight active sidebar item
     const sidebarItems = document.querySelectorAll('.sidebar nav ul li');
     sidebarItems.forEach((item, idx) => {
         item.classList.remove('active');
@@ -75,11 +144,9 @@ function displayContent(topics, index) {
         }
     });
 
-    // Add navigation buttons
     const navigationContainer = document.createElement('div');
     navigationContainer.classList.add('navigation');
 
-    // Previous button
     if (index > 0) {
         const prevButton = document.createElement('button');
         prevButton.textContent = 'Previous';
@@ -89,7 +156,6 @@ function displayContent(topics, index) {
         navigationContainer.appendChild(prevButton);
     }
 
-    // Next button
     if (index < topics.length - 1) {
         const nextButton = document.createElement('button');
         nextButton.textContent = 'Next';
@@ -100,6 +166,30 @@ function displayContent(topics, index) {
     }
 
     contentContainer.appendChild(navigationContainer);
+}
+
+function checkMCQAnswers(mcqs, topicIndex) {
+    mcqs.forEach((question, qIdx) => {
+        const selectedOption = document.querySelector(`input[name="mcq-${topicIndex}-${qIdx}"]:checked`);
+        const resultElement = document.createElement('div');
+        resultElement.classList.add('mcq-result');
+
+        if (selectedOption) {
+            if (selectedOption.value === question.answer) {
+                resultElement.textContent = 'Correct!';
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = `Incorrect! The correct answer is: ${question.answer}`;
+                resultElement.style.color = 'red';
+            }
+        } else {
+            resultElement.textContent = `Please select an answer. The correct answer is: ${question.answer}`;
+            resultElement.style.color = 'orange';
+        }
+
+        const questionElement = document.querySelector(`.mcq-section .mcq-question:nth-child(${qIdx * 2 + 1})`);
+        questionElement.appendChild(resultElement);
+    });
 }
 
 function adjustContentMargin() {
@@ -120,13 +210,11 @@ function copyCodeToClipboard(code) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
 
-    // Optionally, provide feedback to the user
     alert('Code copied to clipboard!');
 }
-// Adjust content margin on window resize
+
 window.addEventListener('resize', adjustContentMargin);
 
-// Sidebar item click event
 document.getElementById('sidebar-menu').addEventListener('click', function(event) {
     if (event.target.tagName === 'A') {
         event.preventDefault();
