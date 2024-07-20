@@ -64,7 +64,7 @@
         },
         {
             "title": "Data Types",
-            "url" : "https://www.youtube.com/watch?v=LKFrQXaoSMQ",
+            "url": "https://www.youtube.com/watch?v=LKFrQXaoSMQ",
             "content": [
                 {
                     "subsection": "Introduction to Data Types",
@@ -158,13 +158,44 @@
                             "print(x, y, z)"
                         ]
                     }
+                },
+                {
+                    "subsection": "MCQs",
+                    "description": "",
+                    "mcq": [
+                        {
+                            "question": "Which of these is not a core data type?",
+                            "options": ["Lists", "Dictionary", "Tuples", "Class"],
+                            "answer": "Class"
+                        },
+                        {
+                            "question": "Given a function that does not return any value, what value is thrown by default when executed in the shell?",
+                            "options": ["int", "bool", "void", "None"],
+                            "answer": "None"
+                        },
+                        {
+                            "question": "What is the return type of the function `id`?",
+                            "options": ["int", "float", "bool", "dict"],
+                            "answer": "int"
+                        },
+                        {
+                            "question": "What data type is the object below? `L = [1, 23, 'hello', 1]`",
+                            "options": ["list", "dictionary", "array", "tuple"],
+                            "answer": "list"
+                        },
+                        {
+                            "question": "Which data type in Python is used to store a sequence of characters?",
+                            "options": ["Integer", "Float", "String", "Boolean"],
+                            "answer": "String"
+                        }
+                    ]
                 }
             ]
-        },
+        }
+        ,
         {
             "title": "Variables",
             "url": "https://www.youtube.com/watch?v=dHcCbxTfwoU",
-    
             "content": [
                 {
                     "subsection": "Introduction to Variables",
@@ -240,9 +271,41 @@
                             "# print('Python is ' + y)"
                         ]
                     }
+                },
+                {
+                    "subsection": "MCQs",
+                    "description": "",
+                    "mcq": [
+                        {
+                            "question": "What is a variable in Python?",
+                            "options": ["A reserved word", "A data type", "A location in memory to store data", "A function"],
+                            "answer": "A location in memory to store data"
+                        },
+                        {
+                            "question": "How do you declare a variable in Python?",
+                            "options": ["var x", "x = variable", "declare x", "x = 4"],
+                            "answer": "x = 4"
+                        },
+                        {
+                            "question": "What is the correct way to comment a single line in Python?",
+                            "options": ["// This is a comment", "# This is a comment", "/* This is a comment */", "-- This is a comment"],
+                            "answer": "# This is a comment"
+                        },
+                        {
+                            "question": "Which of the following is a valid variable name in Python?",
+                            "options": ["1variable", "my_variable", "global", "variable-1"],
+                            "answer": "my_variable"
+                        },
+                        {
+                            "question": "How do you swap the values of two variables in Python without using a third variable?",
+                            "options": ["x = y; y = x", "x, y = y, x", "temp = x; x = y; y = temp", "x + y; y = x; x = y"],
+                            "answer": "x, y = y, x"
+                        }
+                    ]
                 }
             ]
-        },  {
+        }
+,         {
             "title": "Booleans",
             "content": [
                 {
@@ -294,9 +357,41 @@
                             "bool({})"
                         ]
                     }
+                },
+                {
+                    "subsection": "MCQs",
+                    "description": "",
+                    "mcq": [
+                        {
+                            "question": "What will be the output of the following Python code snippet?\n\nbool('False')\nbool()",
+                            "options": ["True\nTrue", "False\nTrue", "False\nFalse", "True\nFalse"],
+                            "answer": "True\nFalse"
+                        },
+                        {
+                            "question": "What will be the output of the following Python code snippet?\n\n['hello', 'morning'][bool('')]",
+                            "options": ["error", "no output", "hello", "morning"],
+                            "answer": "morning"
+                        },
+                        {
+                            "question": "What will be the output of the following Python code snippet?\n\nnot(3>4)\nnot(1&1)",
+                            "options": ["True\nTrue", "True\nFalse", "False\nTrue", "False\nFalse"],
+                            "answer": "True\nFalse"
+                        },
+                        {
+                            "question": "What will be the output of the following Python code?\n\n['f', 't'][bool('spam')]",
+                            "options": ["t", "f", "No output", "Error"],
+                            "answer": "t"
+                        },
+                        {
+                            "question": "What will be the output of the following Python code?\n\nl=[1, 0, 2, 0, 'hello', '', []]\nlist(filter(bool, l))",
+                            "options": ["Error", "[1, 0, 2, 0, 'hello', '', []]", "[1, 0, 2, 'hello', '', []]", "[1, 2, 'hello']"],
+                            "answer": "[1, 2, 'hello']"
+                        }
+                    ]
                 }
             ]
-        },
+        }
+        ,
 
         {
             "title": "Input Function",
@@ -371,124 +466,213 @@
                             "\"\"\"\nThis is a multi-line comment.\n\nIt can span multiple lines.\n\"\"\""
                         ]
                     }
+                },
+                {
+                    "subsection": "MCQs",
+                    "description": "",
+                    "mcq": [
+                        {
+                            "question": "How much space is occupied after the compilation of a Python script by comments?",
+                            "options": ["1 Byte", "1 KB", "1 MB", "Zero Byte"],
+                            "answer": "Zero Byte"
+                        },
+                        {
+                            "question": "In a Python script, where can you write a comment line?",
+                            "options": ["Start of code", "End of code", "In between", "Anywhere"],
+                            "answer": "Anywhere"
+                        },
+                        {
+                            "question": "Which of the following is a use of comments in Python?",
+                            "options": ["Readability", "Descriptive", "Program Information", "All of these"],
+                            "answer": "All of these"
+                        },
+                        {
+                            "question": "Non-executable statements in Python are called:",
+                            "options": ["Directives", "Functions", "Comments", "Control Structures"],
+                            "answer": "Comments"
+                        },
+                        {
+                            "question": "In Python programming, which of the following symbols is used for writing comments?",
+                            "options": ["//", "/", "$", "#"],
+                            "answer": "#"
+                        }
+                    ]
                 }
             ]
         }
+        
 ,        
-        {
-            "title": "Strings",
-            "url": "https://www.youtube.com/watch?v=crw3rVFNwIM",
-            "content": [
-                {
-                    "subsection": "Creating Strings",
-                    "description": "Strings can be created by enclosing characters in single quotes (`'`), double quotes (`\"`), triple single quotes (`'''`), or triple double quotes (`\"\"\").",
-                    "code": {
-                        "language": "python",
-                        "content": [
-                            "single_quoted_string = 'Hello, World!'",
-                            "double_quoted_string = \"Hello, World!\"",
-                            "triple_single_quoted_string = '''Hello,\nWorld!'''",
-                            "triple_double_quoted_string = \"\"\"Hello,\nWorld!\"\"\""
-                        ]
-                    }
-                },
-                {
-                    "subsection": "Accessing Characters in a String",
-                    "description": "You can access individual characters in a string using indexing, where the index starts at 0.",
-                    "code": {
-                        "language": "python",
-                        "content": [
-                            "greeting = \"Hello, World!\"",
-                            "print(greeting[0])  # Output: H",
-                            "print(greeting[7])  # Output: W"
-                        ]
-                    }
-                },
-                {
-                    "subsection": "Slicing Strings",
-                    "description": "Slicing allows you to obtain a substring by specifying a range of indices. The syntax for slicing is `string[start:end]`.",
-                    "code": {
-                        "language": "python",
-                        "content": [
-                            "greeting = \"Hello, World!\"",
-                            "print(greeting[0:5])  # Output: Hello",
-                            "print(greeting[7:12])  # Output: World"
-                        ]
-                    }
-                },
-                {
-                    "subsection": "String Methods",
-                    "description": "Python provides several built-in methods to manipulate strings. Here are some commonly used methods:",
-                    "list": [
-                        "lower(): Converts all characters to lowercase.",
-                        "upper(): Converts all characters to uppercase.",
-                        "strip(): Removes leading and trailing whitespace.",
-                        "replace(old, new): Replaces all occurrences of a substring with another substring.",
-                        "split(delimiter): Splits the string into a list of substrings based on the specified delimiter."
-                    ],
-                    "code": {
-                        "language": "python",
-                        "content": [
-                            "text = \"  Hello, World!  \"",
-                            "# Convert to lowercase",
-                            "print(text.lower())  # Output: hello, world!",
-                            "# Convert to uppercase",
-                            "print(text.upper())  # Output: HELLO, WORLD!",
-                            "# Strip whitespace",
-                            "print(text.strip())  # Output: Hello, World!",
-                            "# Replace a substring",
-                            "print(text.replace(\"World\", \"Python\"))  # Output: Hello, Python!",
-                            "# Split the string",
-                            "print(text.split(\",\"))  # Output: ['  Hello', ' World!  ']"
-                        ]
-                    }
-                },
-                {
-                    "subsection": "String Concatenation",
-                    "description": "You can concatenate strings using the `+` operator or by using the `join()` method.",
-                    "code": {
-                        "language": "python",
-                        "content": [
-                            "# Using the + operator",
-                            "greeting = \"Hello\" + \", \" + \"World!\"",
-                            "print(greeting)  # Output: Hello, World!",
-                            "# Using the join() method",
-                            "words = [\"Hello\", \"World\"]",
-                            "greeting = \", \".join(words)",
-                            "print(greeting)  # Output: Hello, World"
-                        ]
-                    }
-                },
-                {
-                    "subsection": "String Formatting",
-                    "description": "Python provides several ways to format strings, making it easy to create and manage strings that include variables. Common methods include the `format()` method and f-strings (formatted string literals).",
-                    "code": {
-                        "language": "python",
-                        "content": [
-                            "name = \"Alice\"",
-                            "age = 25",
-                            "# Using the format() method",
-                            "greeting = \"Hello, my name is {} and I am {} years old.\".format(name, age)",
-                            "print(greeting)  # Output: Hello, my name is Alice and I am 25 years old.",
-                            "# Using f-strings (available in Python 3.6+)",
-                            "greeting = f\"Hello, my name is {name} and I am {age} years old.\"",
-                            "print(greeting)  # Output: Hello, my name is Alice and I am 25 years old."
-                        ]
-                    }
-                },
-                {
-                    "subsection": "Multi-line Strings",
-                    "description": "Multi-line strings are created using triple quotes (`'''` or `\"\"\"). They are often used for documentation (docstrings) or to include large blocks of text in your code.",
-                    "code": {
-                        "language": "python",
-                        "content": [
-                            "multi_line_string = \"\"\"This is a multi-line string.\n\nIt can span multiple lines.\n\nIt is very useful for large blocks of text.\"\"\"",
-                            "print(multi_line_string)"
-                        ]
-                    }
-                }
-            ]
-        },    {
+{
+    "title": "Strings",
+    "url": "https://www.youtube.com/watch?v=crw3rVFNwIM",
+    "content": [
+      {
+        "subsection": "Creating Strings",
+        "description": "Strings can be created by enclosing characters in single quotes (`'`), double quotes (`\"`), triple single quotes (`'''`), or triple double quotes (`\"\"\"`),.",
+        "code": {
+          "language": "python",
+          "content": [
+            "single_quoted_string = 'Hello, World!'",
+            "double_quoted_string = \"Hello, World!\"",
+            "triple_single_quoted_string = '''Hello,\nWorld!'''",
+            "triple_double_quoted_string = \"\"\"Hello,\nWorld!\"\"\""
+          ]
+        }
+      },
+      {
+        "subsection": "Accessing Characters in a String",
+        "description": "You can access individual characters in a string using indexing, where the index starts at 0.",
+        "code": {
+          "language": "python",
+          "content": [
+            "greeting = \"Hello, World!\"",
+            "print(greeting[0])  # Output: H",
+            "print(greeting[7])  # Output: W"
+          ]
+        }
+      },
+      {
+        "subsection": "Slicing Strings",
+        "description": "Slicing allows you to obtain a substring by specifying a range of indices. The syntax for slicing is `string[start:end]`.",
+        "code": {
+          "language": "python",
+          "content": [
+            "greeting = \"Hello, World!\"",
+            "print(greeting[0:5])  # Output: Hello",
+            "print(greeting[7:12])  # Output: World"
+          ]
+        }
+      },
+      {
+        "subsection": "String Methods",
+        "description": "Python provides several built-in methods to manipulate strings. Here are some commonly used methods:",
+        "list": [
+          "lower(): Converts all characters to lowercase.",
+          "upper(): Converts all characters to uppercase.",
+          "strip(): Removes leading and trailing whitespace.",
+          "replace(old, new): Replaces all occurrences of a substring with another substring.",
+          "split(delimiter): Splits the string into a list of substrings based on the specified delimiter."
+        ],
+        "code": {
+          "language": "python",
+          "content": [
+            "text = \"  Hello, World!  \"",
+            "# Convert to lowercase",
+            "print(text.lower())  # Output: hello, world!",
+            "# Convert to uppercase",
+            "print(text.upper())  # Output: HELLO, WORLD!",
+            "# Strip whitespace",
+            "print(text.strip())  # Output: Hello, World!",
+            "# Replace a substring",
+            "print(text.replace(\"World\", \"Python\"))  # Output: Hello, Python!",
+            "# Split the string",
+            "print(text.split(\",\"))  # Output: ['  Hello', ' World!  ']"
+          ]
+        }
+      },
+      {
+        "subsection": "String Concatenation",
+        "description": "You can concatenate strings using the `+` operator or by using the `join()` method.",
+        "code": {
+          "language": "python",
+          "content": [
+            "# Using the + operator",
+            "greeting = \"Hello\" + \", \" + \"World!\"",
+            "print(greeting)  # Output: Hello, World!",
+            "# Using the join() method",
+            "words = [\"Hello\", \"World\"]",
+            "greeting = \", \".join(words)",
+            "print(greeting)  # Output: Hello, World"
+          ]
+        }
+      },
+      {
+        "subsection": "String Formatting",
+        "description": "Python provides several ways to format strings, making it easy to create and manage strings that include variables. Common methods include the `format()` method and f-strings (formatted string literals).",
+        "code": {
+          "language": "python",
+          "content": [
+            "name = \"Alice\"",
+            "age = 25",
+            "# Using the format() method",
+            "greeting = \"Hello, my name is {} and I am {} years old.\".format(name, age)",
+            "print(greeting)  # Output: Hello, my name is Alice and I am 25 years old.",
+            "# Using f-strings (available in Python 3.6+)",
+            "greeting = f\"Hello, my name is {name} and I am {age} years old.\"",
+            "print(greeting)  # Output: Hello, my name is Alice and I am 25 years old."
+          ]
+        }
+      },
+      {
+        "subsection": "Multi-line Strings",
+        "description": "Multi-line strings are created using triple quotes (`'''` or `\"\"\"`). They are often used for documentation (docstrings) or to include large blocks of text in your code.",
+        "code": {
+          "language": "python",
+          "content": [
+            "multi_line_string = \"\"\"This is a multi-line string.\n\nIt can span multiple lines.\n\nIt is very useful for large blocks of text.\"\"\"",
+            "print(multi_line_string)"
+          ]
+        }
+      },
+      {
+        "subsection": "MCQs",
+        "description": "",
+        "mcq": [
+          {
+            "question": "What does the following Python code snippet do?\n\nstring = \"Hello, World!\"\nprint(string.upper())",
+            "options": [
+              "a) Prints “Hello, World!” in lowercase",
+              "b) Converts “Hello, World!” to uppercase and prints it",
+              "c) Reverses the string “Hello, World!”",
+              "d) Removes all whitespace characters from the string “Hello, World!”"
+            ],
+            "answer": "b"
+          },
+          {
+            "question": "How can you concatenate two strings in Python?",
+            "options": [
+              "a) Using the concat() method",
+              "b) Using the join() method",
+              "c) Using the & operator",
+              "d) Using the + operator"
+            ],
+            "answer": "d"
+          },
+          {
+            "question": "What is the output of the following Python code snippet?\n\nstring = \"Hello, World!\"\nprint(string[3:7])",
+            "options": [
+              "a) “Hello”",
+              "b) “lo, “",
+              "c) “lo, W”",
+              "d) “lo, World”"
+            ],
+            "answer": "b"
+          },
+          {
+            "question": "Which method is used to split a string into a list of substrings based on a delimiter in Python?",
+            "options": [
+              "a) split()",
+              "b) substring()",
+              "c) separate()",
+              "d) divide()"
+            ],
+            "answer": "a"
+          },
+          {
+            "question": "What does the strip() method do in Python string manipulation?",
+            "options": [
+              "a) Removes all whitespace characters from both ends of the string",
+              "b) Removes all characters except alphabets from the string",
+              "c) Converts the string to uppercase",
+              "d) Converts the string to lowercase"
+            ],
+            "answer": "a"
+          }
+        ]
+      }
+    ]
+  }
+,      {
             "title": "Lists",
             "url" : "https://www.youtube.com/watch?v=gOMW_n2-2Mw",
             "content": [
@@ -504,6 +688,7 @@
                             "mixed_list = [1, 'hello', 3.5, True]"
                         ]
                     }
+                    
                 },
                 {
                     "subsection": "Accessing Elements in a List",
@@ -1207,6 +1392,19 @@
                         "print('\\n\\nRecursion Example Results')",
                         "tri_recursion(6)"
                     ]
+                }
+            }
+        ]
+    },  {
+        "title": "Practice",
+        "url": "practice.pdf",
+        "content": [
+            {
+                "subsection": "Practice Material",
+                "description": "Download the practice material to enhance your learning.",
+                "pdf": {
+                    "path": "practice.pdf",
+                    "description": "Comprehensive practice guide on Python basics."
                 }
             }
         ]

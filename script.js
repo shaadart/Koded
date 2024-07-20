@@ -37,18 +37,32 @@ function displayContent(topics, index) {
     topicElement.appendChild(title);
 
     if (topic.url) {
-        const videoContainer = document.createElement('div');
-        videoContainer.classList.add('video-container');
+        if (topic.title === "Practice") {
+            const pdfContainer = document.createElement('div');
+            pdfContainer.classList.add('pdf-container');
 
-        const iframe = document.createElement('iframe');
-        const videoId = new URL(topic.url).searchParams.get('v');
-        iframe.src = `https://www.youtube.com/embed/${videoId}`;
-        iframe.frameBorder = 0;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
+            const iframe = document.createElement('iframe');
+            iframe.src = topic.url;
+            iframe.style.width = '100%';
+            iframe.style.height = '800px'; // Adjust height as needed
+            iframe.frameBorder = 0;
 
-        videoContainer.appendChild(iframe);
-        topicElement.appendChild(videoContainer);
+            pdfContainer.appendChild(iframe);
+            topicElement.appendChild(pdfContainer);
+        } else {
+            const videoContainer = document.createElement('div');
+            videoContainer.classList.add('video-container');
+
+            const iframe = document.createElement('iframe');
+            const videoId = new URL(topic.url).searchParams.get('v');
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+            iframe.frameBorder = 0;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+
+            videoContainer.appendChild(iframe);
+            topicElement.appendChild(videoContainer);
+        }
     }
 
     topic.content.forEach(section => {
@@ -169,6 +183,10 @@ function displayContent(topics, index) {
 }
 
 function checkMCQAnswers(mcqs, topicIndex) {
+    // Clear out any existing results before adding new ones
+    const existingResults = document.querySelectorAll('.mcq-result');
+    existingResults.forEach(result => result.remove());
+
     mcqs.forEach((question, qIdx) => {
         const selectedOption = document.querySelector(`input[name="mcq-${topicIndex}-${qIdx}"]:checked`);
         const resultElement = document.createElement('div');
@@ -176,21 +194,22 @@ function checkMCQAnswers(mcqs, topicIndex) {
 
         if (selectedOption) {
             if (selectedOption.value === question.answer) {
+                resultElement.classList.add('correct');
                 resultElement.textContent = 'Correct!';
-                resultElement.style.color = 'green';
             } else {
+                resultElement.classList.add('incorrect');
                 resultElement.textContent = `Incorrect! The correct answer is: ${question.answer}`;
-                resultElement.style.color = 'red';
             }
         } else {
+            resultElement.classList.add('warning');
             resultElement.textContent = `Please select an answer. The correct answer is: ${question.answer}`;
-            resultElement.style.color = 'orange';
         }
 
         const questionElement = document.querySelector(`.mcq-section .mcq-question:nth-child(${qIdx * 2 + 1})`);
         questionElement.appendChild(resultElement);
     });
 }
+
 
 function adjustContentMargin() {
     const sidebar = document.querySelector('.sidebar');
