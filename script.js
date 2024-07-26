@@ -70,9 +70,42 @@ function displayContent(topics, index) {
         subsection.textContent = section.subsection;
         topicElement.appendChild(subsection);
 
-        const description = document.createElement('p');
-        description.textContent = section.description;
-        topicElement.appendChild(description);
+        if (section.description) {
+            const description = document.createElement('p');
+            description.textContent = section.description;
+            topicElement.appendChild(description);
+        }
+
+        if (section.image) {
+            const img = document.createElement('img');
+            img.src = section.image;
+            img.alt = section.subsection;
+            img.style.width = '100%';
+            img.style.height = 'auto';
+            topicElement.appendChild(img);
+        }
+
+        if (section.video) {
+            const videoContainer = document.createElement('div');
+            videoContainer.classList.add('video-container');
+
+            const video = document.createElement('video');
+            video.src = section.video;
+            video.controls = true;
+            video.style.width = '100%';
+
+            videoContainer.appendChild(video);
+            topicElement.appendChild(videoContainer);
+        }
+        if (section.list) {
+            const list = document.createElement('ul');
+            section.list.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = item.replace(/`(\w+)`/, '<strong>$1</strong>'); // Bold the text inside backticks
+                list.appendChild(listItem);
+            });
+            topicElement.appendChild(list);
+        }
 
         if (section.features) {
             const list = document.createElement('ul');
@@ -99,13 +132,14 @@ function displayContent(topics, index) {
                 copyCodeToClipboard(section.code.content.join('\n'));
             });
 
-            pre.appendChild(copyButton); // Append the copy button inside the pre element at the top
+            pre.appendChild(copyButton);
             pre.appendChild(code);
             codeBlock.appendChild(pre);
 
             topicElement.appendChild(codeBlock);
         }
 
+        // Handle MCQ, if present
         if (section.mcq) {
             const mcqSection = document.createElement('div');
             mcqSection.classList.add('mcq-section');
@@ -142,8 +176,8 @@ function displayContent(topics, index) {
             checkAnswersButton.addEventListener('click', () => {
                 checkMCQAnswers(section.mcq, index);
             });
-            mcqSection.appendChild(checkAnswersButton);
 
+            mcqSection.appendChild(checkAnswersButton);
             topicElement.appendChild(mcqSection);
         }
     });
@@ -210,7 +244,6 @@ function checkMCQAnswers(mcqs, topicIndex) {
     });
 }
 
-
 function adjustContentMargin() {
     const sidebar = document.querySelector('.sidebar');
     const content = document.querySelector('.content');
@@ -232,6 +265,23 @@ function copyCodeToClipboard(code) {
     alert('Code copied to clipboard!');
 }
 
+function toggleOutput() {
+    const outputBlocks = document.querySelectorAll('.output-block');
+    outputBlocks.forEach(block => {
+        block.style.display = (block.style.display === 'none') ? 'block' : 'none';
+    });
+}
+
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+    
+    if (sidebar) {
+        sidebar.classList.toggle('visible');
+        adjustContentMargin(); // Adjust content margin after sidebar visibility changes
+    }
+}
+
 window.addEventListener('resize', adjustContentMargin);
 
 document.getElementById('sidebar-menu').addEventListener('click', function(event) {
@@ -241,3 +291,6 @@ document.getElementById('sidebar-menu').addEventListener('click', function(event
         displayContent(topicsData, parseInt(index));
     }
 });
+
+// Add event listener for sidebar toggle button
+document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
