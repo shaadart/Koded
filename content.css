@@ -37,7 +37,7 @@ body, html {
 }
 
 .header nav ul li {
-    margin-left: 55px; /* Spacing between nav items */
+    margin-left: 20px; /* Spacing between nav items */
 }
 
 .header nav ul li a {
@@ -59,23 +59,18 @@ body, html {
 }
 /* Sidebar Styles */
 .sidebar {
-    width: 250px;
     position: fixed;
+    top: 1;
     left: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #f4f4f4;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%);
-}
-
-.sidebar.visible {
+    height: 100%; /* Full viewport height */
+    width: 20%;
+    background-color: #333333;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 100; /* Lower than header */
     transform: translateX(0);
-}
-
-.content {
-    margin-left: 0; /* Default margin */
-    transition: margin-left 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 
