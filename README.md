@@ -7,7 +7,7 @@ Koded is a powerful platform designed to make learning programming easy and acce
 
 - **Comprehensive Tutorials**: Dive into detailed Python tutorials that cover everything from basics to advanced topics.
 - **Interactive Coding Exercises**: Engage with coding exercises and quizzes to test your skills and knowledge.
-- **Expert Guidance**: Dear Gen-z Generation, Fill your belly with programming with the help of that cold-drink, we call memes..
+- **Expert Meme-ing ful Content**: Dear Gen-z Generation, Fill your belly with programming with the help of that cold-drink, we call memes..
 
 ## 🎯 Our Mission
 
