@@ -7,11 +7,14 @@ Koded is a powerful platform designed to make learning programming easy and acce
 
 - **Comprehensive Tutorials**: Dive into detailed Python tutorials that cover everything from basics to advanced topics.
 - **Interactive Coding Exercises**: Engage with coding exercises and quizzes to test your skills and knowledge.
-- **Expert Guidance**: Benefit from the expertise of seasoned Python developers who provide support and feedback.
+- **Expert Guidance**: Dear Gen-z Generation, Fill your belly with programming with the help of that cold-drink, we call memes..
 
 ## 🎯 Our Mission
 
-At Koded, our mission is to bridge the digital divide and empower individuals with essential programming skills. We believe in providing opportunities for growth and future success through our dedicated and impactful programs.
+At Koded, our mission is to bridge the digital divide and empower individuals with essential programming skills. We believe in providing opportunities for growth and future success through our dedicated and impactful programs, and for the first time, we are incorporating humourous content to make learning accesible and fun.
+
+![helloworld](https://github.com/user-attachments/assets/e9808117-dd45-4508-8d56-da2398ae3bd2)
+
 
 ## 🛠️ The Team
 
