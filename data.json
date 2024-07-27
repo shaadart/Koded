@@ -6,13 +6,9 @@
       "content": [
         {
           "subsection": "Introduction to Python",
-          "description": "Python is a high-level scripting language used for text processing, system administration, and internet-related tasks. It has a small core language that's easy to master, with extensive module support for various tasks. Python is object-oriented and available on multiple platforms.",
-          "history": {
-            "developer": "Guido van Rossum",
-            "development_period": "Early 1990s",
-            "current_affiliation": "CNRI in Virginia"
-          }
+          "description": "Python is a high-level scripting language used for text processing, system administration, and internet-related tasks. It has a small core language that's easy to master, with extensive module support for various tasks. Python is object-oriented and available on multiple platforms."
         },
+        {"image": "memes/programming.jpg"},
         {
           "subsection": "Basic Principles of Python",
           "description": "Python incorporates features found in more complex languages from its inception, making it beginner-friendly yet powerful for advanced users.",
@@ -377,6 +373,7 @@
             ]
           }
         },
+        {"image": "memes/boolean.webp"},
         {
           "subsection": "Boolean Values",
           "description": "In Python, `True` and `False` are Boolean values (note the uppercase T and F).",
@@ -547,6 +544,8 @@
             ]
           }
         },
+        {"image": "memes/comments.webp"},
+       
         {
           "subsection": "MCQs",
           "description": "",
@@ -602,7 +601,8 @@
               "answer": "#"
             }
           ]
-        }
+        },  {"image": "memes/comments.jpg"}
+    
       ]
     },
     {
@@ -646,6 +646,7 @@
             ]
           }
         },
+       
         {
           "subsection": "String Methods",
           "description": "Python provides several built-in methods to manipulate strings. Here are some commonly used methods:",
@@ -673,6 +674,8 @@
             ]
           }
         },
+        {"image": "memes/string.webp"},
+     
         {
           "subsection": "String Concatenation",
           "description": "You can concatenate strings using the `+` operator or by using the `join()` method.",
@@ -815,6 +818,7 @@
             ]
           }
         },
+
         {
           "subsection": "List Methods",
           "description": "Python provides several built-in methods to manipulate lists. Here are some commonly used methods:",
@@ -918,6 +922,8 @@
             ]
           }
         },
+        {"image": "memes/concatinate_list.jpg"},
+     
         {
           "subsection": "List Iteration Techniques",
           "description": "Python offers multiple techniques to iterate over lists, including `for` loops, `enumerate()`, `zip()`, and list comprehensions.",
@@ -1187,6 +1193,8 @@
             ]
           }
         },
+        {"image": "memes/ifelse2.webp"},
+     
         {
           "subsection": "Elif Statements",
           "description": "Elif statements (short for 'else if') allow you to check multiple conditions. If the first condition is false, the program checks the next condition, and so on.",
@@ -1217,6 +1225,8 @@
             ]
           }
         },
+        {"image": "memes/ifelse.jpg"},
+     
         {
           "subsection": "MCQs",
           "description": "",
@@ -1256,6 +1266,7 @@
       "title": "Loops",
       "url": "https://www.youtube.com/watch?v=ZHdai11Xga0",
       "content": [
+        {"image": "memes/loops.jpeg"},
         {
           "subsection": "Introduction to Loops",
           "description": "Loops are used to execute a block of code repeatedly as long as a condition is met. There are two main types of loops in Python: for loops and while loops.",
@@ -1305,6 +1316,23 @@
           }
         },
         {
+            "subsection": "Do-While Loop",
+            "description": "In Python, there is no built-in do-while loop like in some other programming languages. However, you can achieve a similar behavior using a while loop with a conditional check at the end.",
+            "code": {
+              "content": [
+                "# Do-While loop equivalent in Python",
+                "count = 0",
+                "while True:",
+                "    print(count)",
+                "    count += 1",
+                "    if count >= 5:",
+                "        break"
+              ]
+            }
+          },
+       
+     
+        {
           "subsection": "Loop Control Statements",
           "description": "Loop control statements change the execution of the loop. Python supports the following control statements: break, continue, and pass.",
           "code": {
@@ -1327,6 +1355,8 @@
             ]
           }
         },
+        {"image": "memes/loops2.jpg"},
+        
         {
           "subsection": "MCQs",
           "description": "",
@@ -1390,6 +1420,7 @@
             ]
           }
         },
+        {"image": "memes/functions2.png"},
         {
           "subsection": "Arguments",
           "description": "Information can be passed into functions as arguments. Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.",
@@ -1490,7 +1521,7 @@
               "print(my_function(9))"
             ]
           }
-        },
+        },   {"image": "memes/functions.jpg"},
         {
           "subsection": "The pass Statement",
           "description": "Function definitions cannot be empty, but if you for some reason have a function definition with no content, put in the pass statement to avoid getting an error.",
@@ -1502,6 +1533,7 @@
             ]
           }
         },
+
         {
           "subsection": "Recursion",
           "description": "Python also accepts function recursion, which means a defined function can call itself. Recursion is a common mathematical and programming concept. It means that a function calls itself. This has the benefit of meaning that you can loop through data to reach a result.",
@@ -1520,13 +1552,14 @@
               "tri_recursion(6)"
             ]
           }
-        }
+        }, {"image": "memes/recursion.jpeg"}
       ]
     },
     {
       "title": "Practice",
       "url": "practice.pdf",
       "content": [
+        {"image": "memes/practice.jpeg"},
         {
           "subsection": "Practice Material",
           "description": "Download the practice material to enhance your learning.",
@@ -1536,6 +1569,39 @@
           }
         }
       ]
-    }
+    },     {
+        "title": "Real Life Project - Rock Paper Scissors",
+        
+        "content": [
+            {"image" : "memes/settle.webp"},
+        {  "video": "videos/rock_paper_scissors.mp4"},
+          {
+            "subsection": "Code",
+            "description": "Here is the code for the Rock Paper Scissors game in Python.",
+            "code": {
+              "language": "python",
+              "content": [
+                "import random",
+                "",
+                "def play_game(player_choice):",
+                "    choices = ['rock', 'paper', 'scissors']",
+                "    computer_choice = random.choice(choices)",
+                "    print(f'Player chooses: {player_choice}')",
+                "    print(f'Computer chooses: {computer_choice}')",
+                "    if player_choice == computer_choice:",
+                "        print('It's a tie!')",
+                "    elif (player_choice == 'rock' and computer_choice == 'scissors') or (player_choice == 'paper' and computer_choice == 'rock') or (player_choice == 'scissors' and computer_choice == 'paper'):",
+                "        print('Player wins!')",
+                "    else:",
+                "        print('Computer wins!')",
+                "",
+                "player_choice = input('Enter your choice (rock, paper, scissors): ')",
+                "play_game(player_choice)"
+              ]
+            }
+        
+          }, {"image" : "memes/rock.jpg"}
+        ]
+      }
   ]
 }

@@ -117,6 +117,7 @@ function displayContent(topics, index) {
             topicElement.appendChild(list);
         }
 
+
         if (section.code) {
             const codeBlock = document.createElement('div');
             codeBlock.classList.add('code-block');
@@ -141,45 +142,85 @@ function displayContent(topics, index) {
 
         // Handle MCQ, if present
         if (section.mcq) {
+
             const mcqSection = document.createElement('div');
+
             mcqSection.classList.add('mcq-section');
 
+
+
             section.mcq.forEach((question, qIdx) => {
+
                 const questionElement = document.createElement('div');
+
                 questionElement.classList.add('mcq-question');
+
                 questionElement.textContent = `${qIdx + 1}. ${question.question}`;
+
                 mcqSection.appendChild(questionElement);
 
+
+
                 const optionsList = document.createElement('ul');
+
                 optionsList.classList.add('mcq-options');
 
+
+
                 question.options.forEach(option => {
+
                     const optionItem = document.createElement('li');
 
+
+
                     const optionLabel = document.createElement('label');
+
                     const optionRadio = document.createElement('input');
+
                     optionRadio.type = 'radio';
+
                     optionRadio.name = `mcq-${index}-${qIdx}`;
+
                     optionRadio.value = option;
 
+
+
                     optionLabel.appendChild(optionRadio);
+
                     optionLabel.appendChild(document.createTextNode(option));
+
                     optionItem.appendChild(optionLabel);
+
                     optionsList.appendChild(optionItem);
+
                 });
 
+
+
                 mcqSection.appendChild(optionsList);
+
             });
 
+
+
             const checkAnswersButton = document.createElement('button');
+
             checkAnswersButton.textContent = 'Check Answers';
+
             checkAnswersButton.addEventListener('click', () => {
+
                 checkMCQAnswers(section.mcq, index);
+
             });
 
             mcqSection.appendChild(checkAnswersButton);
+
+
+
             topicElement.appendChild(mcqSection);
+
         }
+
     });
 
     contentContainer.appendChild(topicElement);
@@ -216,6 +257,7 @@ function displayContent(topics, index) {
     contentContainer.appendChild(navigationContainer);
 }
 
+
 function checkMCQAnswers(mcqs, topicIndex) {
     // Clear out any existing results before adding new ones
     const existingResults = document.querySelectorAll('.mcq-result');
@@ -244,6 +286,7 @@ function checkMCQAnswers(mcqs, topicIndex) {
     });
 }
 
+
 function adjustContentMargin() {
     const sidebar = document.querySelector('.sidebar');
     const content = document.querySelector('.content');
@@ -268,20 +311,27 @@ function copyCodeToClipboard(code) {
 function toggleOutput() {
     const outputBlocks = document.querySelectorAll('.output-block');
     outputBlocks.forEach(block => {
-        block.style.display = (block.style.display === 'none') ? 'block' : 'none';
+        if (block.style.display === 'none') {
+            block.style.display = 'block';
+        } else {
+            block.style.display = 'none';
+        }
     });
 }
 
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const content = document.querySelector('.content');
-    
-    if (sidebar) {
-        sidebar.classList.toggle('visible');
-        adjustContentMargin(); // Adjust content margin after sidebar visibility changes
-    }
-}
+let lastScrollY = window.scrollY;
+        const header = document.querySelector('.header_container');
 
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down
+                header.classList.add('header-hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('header-hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
 window.addEventListener('resize', adjustContentMargin);
 
 document.getElementById('sidebar-menu').addEventListener('click', function(event) {
@@ -292,5 +342,3 @@ document.getElementById('sidebar-menu').addEventListener('click', function(event
     }
 });
 
-// Add event listener for sidebar toggle button
-document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
